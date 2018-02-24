@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% if user.is_authenticated %}
+    <p>안녕하세요 {{ request.session.email }} 님</p>
+    <a href="/signout/">로그아웃</a>
+    <a href="/mypage/">마이페이지</a>
+{% else %}
+    <a href="/signup/">회원가입</a>
+    <a href="/signin/">로그인</a>
+{% endif %}
+
+
+
+<!-- 호텔리스트 -->
+
+{% for each in hotel_list %}
+<div>
+    <h3><a href="/reserve/{{ each.id }}/">{{ each.name }}</a> | {{ each.price }} 원</h3>
+    <p>{{ each.address }}</p>
+    <p>{{ each.rank }} 등급</p>
+</div>
+{% endfor %}
+
+</body>
+</html>

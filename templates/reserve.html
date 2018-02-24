@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+
+    <input type="text" name="party" placeholder="인원">
+    <input type="text" name="startday" placeholder="YYYY/MM/DD">
+    <input type="text" name="days" placeholder="N 일">
+    <input type="submit" value="예약">
+</form>
+</body>
+</html>
